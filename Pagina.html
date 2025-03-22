@@ -1,1 +1,89 @@
- <h1>Hola mundo <h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector de Juegos</title>
+    <style>
+        /* Estilos generales para centrar el contenido y mejorar la apariencia */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Contenedor principal */
+        .contenedor {
+            background: #282a36;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 300px;
+        }
+
+        /* Estilo para el selector de juegos */
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            background: #44475a;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Botón para ir al juego seleccionado */
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background: #6272a4;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #50fa7b;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h2>Selecciona un Juego</h2>
+        
+        <!-- Selector de juegos -->
+        <select id="juegoSelect">
+            <option value="">-- Elige un juego --</option>
+            <option value="https://store.steampowered.com/app/570/Dota_2/">Dota 2</option>
+            <option value="https://store.steampowered.com/app/730/CounterStrike_2/">Counter-Strike 2</option>
+            <option value="https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/">PUBG</option>
+            <option value="https://store.steampowered.com/app/1172470/Apex_Legends/">Apex Legends</option>
+        </select>
+        
+        <!-- Botón para abrir el enlace del juego seleccionado -->
+        <button onclick="irAlJuego()">Jugar Ahora</button>
+    </div>
+
+    <script>
+        // Función para abrir el enlace del juego seleccionado
+        function irAlJuego() {
+            let seleccion = document.getElementById("juegoSelect").value;
+            if (seleccion) {
+                window.open(seleccion, "_blank"); // Abre el enlace en una nueva pestaña
+            } else {
+                alert("Por favor, selecciona un juego.");
+            }
+        }
+    </script>
+</body>
+</html>
